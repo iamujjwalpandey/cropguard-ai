@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 158 75% 2%;
+    --foreground: 140 28% 96%;
+    --card: 151 72% 7%;
+    --card-foreground: 140 28% 96%;
+    --popover: 151 72% 7%;
+    --popover-foreground: 140 28% 96%;
+    --primary: 139 93% 53%;
+    --primary-foreground: 156 100% 4%;
+    --secondary: 150 40% 13%;
+    --secondary-foreground: 140 28% 96%;
+    --muted: 154 30% 14%;
+    --muted-foreground: 145 14% 71%;
+    --accent: 142 72% 18%;
+    --accent-foreground: 140 28% 96%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 145 56% 25%;
+    --input: 145 56% 25%;
+    --ring: 139 93% 53%;
+    --radius: 1.25rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #020805;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    min-height: 100vh;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  ::selection {
+    background: rgba(22, 246, 106, 0.35);
+    color: white;
+  }
+}
+
+@layer components {
+  .app-bg {
+    background:
+      radial-gradient(circle at 12% 15%, rgba(22, 246, 106, 0.20), transparent 28%),
+      radial-gradient(circle at 82% 7%, rgba(82, 255, 122, 0.12), transparent 30%),
+      radial-gradient(circle at 72% 85%, rgba(10, 148, 62, 0.16), transparent 32%),
+      linear-gradient(135deg, #020805 0%, #03150e 44%, #020805 100%);
+  }
+
+  .glass-panel {
+    @apply rounded-3xl border border-emerald-400/20 bg-glass-gradient shadow-panel backdrop-blur-xl;
+  }
+
+  .glass-panel-soft {
+    @apply rounded-2xl border border-emerald-400/15 bg-white/[0.045] backdrop-blur-xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-white via-emerald-100 to-crop-neon bg-clip-text text-transparent;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 18px rgba(22, 246, 106, 0.28);
+  }
+
+  .scanner-corners::before,
+  .scanner-corners::after {
+    content: '';
+    position: absolute;
+    inset: 1rem;
+    pointer-events: none;
+    background:
+      linear-gradient(#52ff7a, #52ff7a) left top / 32px 3px no-repeat,
+      linear-gradient(#52ff7a, #52ff7a) left top / 3px 32px no-repeat,
+      linear-gradient(#52ff7a, #52ff7a) right top / 32px 3px no-repeat,
+      linear-gradient(#52ff7a, #52ff7a) right top / 3px 32px no-repeat,
+      linear-gradient(#52ff7a, #52ff7a) left bottom / 32px 3px no-repeat,
+      linear-gradient(#52ff7a, #52ff7a) left bottom / 3px 32px no-repeat,
+      linear-gradient(#52ff7a, #52ff7a) right bottom / 32px 3px no-repeat,
+      linear-gradient(#52ff7a, #52ff7a) right bottom / 3px 32px no-repeat;
+    filter: drop-shadow(0 0 10px rgba(82, 255, 122, 0.55));
+  }
+
+  .scanner-grid {
+    background-image:
+      linear-gradient(rgba(82, 255, 122, 0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(82, 255, 122, 0.10) 1px, transparent 1px);
+    background-size: 34px 34px;
+  }
+
+  .scan-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 72px;
+    background: linear-gradient(to bottom, transparent, rgba(82, 255, 122, 0.24), transparent);
+    border-top: 1px solid rgba(82, 255, 122, 0.55);
+    border-bottom: 1px solid rgba(82, 255, 122, 0.25);
+    filter: drop-shadow(0 0 18px rgba(82, 255, 122, 0.5));
+  }
+
+  .field-grid {
+    background-image:
+      linear-gradient(rgba(82, 255, 122, 0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(82, 255, 122, 0.10) 1px, transparent 1px),
+      radial-gradient(circle at 50% 100%, rgba(22, 246, 106, 0.24), transparent 35%);
+    background-size: 80px 80px, 80px 80px, 100% 100%;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-black;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: #111827 !important;
+  }
+
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  .print-card {
+    border: 1px solid #d1d5db !important;
+    background: white !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+  }
+
+  .print-text {
+    color: #111827 !important;
+  }
+}

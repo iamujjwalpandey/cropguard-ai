@@ -1,0 +1,45 @@
+{
+  "name": "cropguard-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CropGuard AI - Scan. Detect. Protect. A premium AI-powered crop health scanner built with Next.js, Gemini Vision, and Groq.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.0",
+    "@react-three/fiber": "9.6.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "12.42.2",
+    "lucide-react": "1.24.0",
+    "next": "16.2.10",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "tailwind-merge": "^2.5.4",
+    "three": "0.181.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@types/three": "0.181.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.10",
+    "postcss": "8.5.10",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "8.5.10"
+    }
+  }
+}

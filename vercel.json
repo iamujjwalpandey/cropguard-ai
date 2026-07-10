@@ -1,0 +1,14 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "functions": {
+    "app/api/analyze-crop/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/summarize-advisory/route.ts": {
+      "maxDuration": 30
+    }
+  }
+}
